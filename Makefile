@@ -8,10 +8,16 @@ endef
 middle:
 	$(create-part) -D "_build_middle=true"
 
+base:
+	$(create-part) -D "_build_base=true"
+
+container:
+	$(create-part) -D "_build_container=true"
+
 open:
 	$(bin) $(fn) &
 
-all: middle
+all: middle base container
 	
 clean:
 	rm *.stl
